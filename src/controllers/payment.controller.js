@@ -34,7 +34,7 @@ export const createSession = async (req, res) => {
     });
 
     console.log(session);
-    return res.json({ url: session.url });
+    return res.redirect(session.url);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
